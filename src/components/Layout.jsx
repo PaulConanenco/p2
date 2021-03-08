@@ -4,11 +4,14 @@ import Footer from '../components/Footer';
 import './Layout.css';
 
 function Layout(props) {
-    return(
+    return (
         <div className="layout">
-            <Header/>
-                { props.children }
-            <Footer/>
+            <Header />
+            <div className="container mt-5 text-center content">
+                {props.children}
+            </div>
+
+            <Footer />
         </div>
     );
 }
