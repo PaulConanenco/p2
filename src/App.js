@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Page404 from './pages/Page404';
 import Category from './pages/Category';
 import Cart from './pages/Cart';
+import Favorites from './pages/Favorites';
 import './utils/utility-classes.css';
 import Product from './pages/Product';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" component={Login}/>
         <Route exact path="/" component={Home}/>
         <Route path="/cart" component={Cart}/>
+        <Route path="/favorites" component={Favorites}/>
         <Route path="/about" component={About}/>
         <Route path="/terms-and-conditions" component={TermsAndConditions}/>
         <Route path="/category/:categoryName" component={Category}/>

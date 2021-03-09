@@ -2,6 +2,7 @@ import React from 'react';
 import './ProductItem.css';
 import { connect } from 'react-redux';
 import { addToCart } from '../redux/actions/cart';
+import { addToFavorites } from '../redux/actions/favorites';
 import { Link } from 'react-router-dom';
 
 function ProductItem(props) {
@@ -16,7 +17,7 @@ function ProductItem(props) {
             </Link>
             <button
                 className="btn btn-outline-dark"
-                onClick={() => props.addToCart({
+                onClick={() => props.addToFavorites({
                     product: {
                         id,
                         name,
@@ -26,7 +27,22 @@ function ProductItem(props) {
                     }
                 })}
             >
-                Adaugă în coș
+                Adaugă in cos
+            </button>
+
+            <button
+                className="btn btn-outline-dark"
+                onClick={() => props.addToFavorites({
+                    product: {
+                        id,
+                        name,
+                        price,
+                        currency,
+                        image
+                    }
+                })}
+            >
+                Adaugă la favorite
             </button>
         </div>
     );
@@ -34,7 +50,8 @@ function ProductItem(props) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        addToCart: (product) => dispatch(addToCart(product))
+        addToCart: (product) => dispatch(addToCart(product)),
+        addToFavorites: (product) => dispatch(addToFavorites(product))
     };
 }
 
