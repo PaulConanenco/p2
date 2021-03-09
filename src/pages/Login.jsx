@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/logo.png';
 import { ReactComponent as Google } from '../assets/icons/google.svg';
+import {ReactComponent as Facebook} from '../assets/icons/facebook.svg';
 import './Login.css'
 import { connect } from 'react-redux';
 import { loginUser } from '../redux/actions/user';
@@ -30,7 +31,7 @@ class Login extends React.Component {
                     className="btn btn-outline-dark d-flex align-items-center"
                     onClick={() => this.props.signInWithGoogle()}
                 >
-                    <Google className="w-50 mr-3" />
+                    <Google className="w-75 mr-3" />
                     <span className="text-nowrap">Loghează-te cu Google</span>
                 </button>
 
@@ -38,7 +39,7 @@ class Login extends React.Component {
                     className="btn btn-outline-dark d-flex align-items-center"
                     onClick={() => this.props.signInWithFacebook()}
                 >
-                    <Google className="w-50 mr-3" />
+                    <Facebook className="w-75 mr-3" />
                     <span className="text-nowrap">Loghează-te cu Facebook</span>
                 </button>
 
